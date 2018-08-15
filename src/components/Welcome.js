@@ -19,6 +19,13 @@ const Welcome = () => (
         前往留言板 &gt;
       </Link>
       &nbsp;
+        <Link
+            to="/msg2"
+            role="button"
+            className="btn btn-success btn-lg">
+            msg2 &gt;
+        </Link>
+      &nbsp;
       <Link
         to="/todo"
         role="button"
