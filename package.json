@@ -1,6 +1,6 @@
 {
   "name": "react-demo",
-  "description": "A Simple Message Board Demo developed by React",
+  "description": "A Simple Message Board Demo developed by React (base on https://github.com/kenberkeley/react-demo.git)",
   "author": "teaho2015 <teaho2015@gmail.com>",
   "version": "0.1.0",
   "scripts": {
