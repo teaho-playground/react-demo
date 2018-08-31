@@ -1,15 +1,16 @@
 {
   "name": "react-demo",
   "description": "A Simple Message Board Demo developed by React",
-  "author": "Ken Berkeley <kenberkeley@foxmail.com>",
+  "author": "teaho2015 <teaho2015@gmail.com>",
   "version": "0.1.0",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node build/dev.js",
+    "start": "webpack-dev-server --config ./scripts/webpack.dev.config.js",
+    "start-old": "cross-env NODE_ENV=development node build/dev.js",
     "build": "cross-env NODE_ENV=production node build/prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenberkeley/react-demo.git"
+    "url": "https://github.com/teaho-playground/react-demo.git"
   },
   "dependencies": {
     "history": "^2.0.0",
@@ -20,7 +21,8 @@
     "react-router": "^2.7.0",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
-    "redux-thunk": "^2.1.0"
+    "redux-thunk": "~2.2.0",
+    "webpack": "~3.10.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -48,10 +50,11 @@
     "eventsource-polyfill": "^0.9.6",
     "express": "^4.13.3",
     "express-favicon": "^1.0.1",
-    "extract-text-webpack-plugin": "^0.9.1",
+    "extract-text-webpack-plugin-webpack-2": "^1.0.1",
+    "extract-text-webpack-plugin": "~3.0.2",
     "file-loader": "^0.8.4",
     "html-loader": "^0.4.3",
-    "html-webpack-plugin": "^1.7.0",
+    "html-webpack-plugin": "^2.30.1",
     "inject-loader": "^2.0.1",
     "json-loader": "^0.5.4",
     "less": "^2.6.0",
@@ -66,10 +69,14 @@
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.2",
-    "webpack-dev-middleware": "^1.4.0",
+    "webpack-dev-server": "~2.11.0",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-hot-middleware": "^2.6.0",
-    "why-did-you-update": "0.0.8"
+    "webpack-merge": "^4.1.1",
+    "why-did-you-update": "0.0.8",
+    "http-proxy": "~1.16.2",
+    "open-browser-webpack-plugin": "~0.0.2",
+    "socket.io": "2.0.4"
   },
   "license": "MIT"
 }
