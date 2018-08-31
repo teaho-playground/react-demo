@@ -18,7 +18,7 @@ const login = (formData) => {
     userService
       .login(formData)
       .then(
-        re => dispatch(loginDone(re))
+        re => dispatch(loginDone(re.data))
       )
   }
 }
@@ -29,7 +29,7 @@ const checkLogin = () => {
       .checkLogin()
       .then((re) => {
         if (!re) return
-        dispatch(loginDone(re))
+        dispatch(loginDone(re.data))
       })
   }
 }

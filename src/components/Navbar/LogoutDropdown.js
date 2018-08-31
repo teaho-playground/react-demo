@@ -18,7 +18,7 @@ export default class LogoutDropdown extends Component {
           <a href="javascript:;"
             className="dropdown-toggle"
             data-toggle="dropdown">
-            欢迎您，{ this.props.userData.username }
+            欢迎您，{ this.props.userData.name }
             <strong className="caret"></strong>
           </a>
           

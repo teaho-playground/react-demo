@@ -56,7 +56,7 @@ export default class MsgDetail extends Component {
 
           <OptBtnGroup
             msgId={msg.id}
-            isAuthor={userData && userData.username === msg.author}
+            isAuthor={userData && userData.name === msg.author}
             delMsg={delMsg}
             parentName="MsgDetail">
             <button /* 该按钮相当于 Vue 中的 slot */

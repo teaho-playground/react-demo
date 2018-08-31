@@ -10,7 +10,6 @@ import { Link } from 'react-router'
  */
 const Welcome = () => (
   <div className="jumbotron">
-    <h1>欢迎使用 <br/> React Demo</h1>
     <p>
       <Link
         to="/msg"

@@ -7,15 +7,15 @@ export default class LoginForm extends Component {
     // P.S: 仅能在构造函数中设置 state
     // 在其他地方绝不能使用 this.state.XXX = XXX
     // 只能使用 this.setState({ XXX: XXX })
-    this.state = { username: '' }
+    this.state = { name: '' }
 
     this.handleChange = handleChange.bind(this) // mixin
   }
 
   handleSubmit () {
-    let username = this.state.username
-    if (!username) return alert('用户名为空')
-    this.props.login({ username })
+    let name = this.state.name
+    if (!name) return alert('用户名为空')
+    this.props.login({ name })
   }
 
   render () {
@@ -36,10 +36,10 @@ export default class LoginForm extends Component {
           <input
             type="text"
             className="form-control"
-            name="username"
+            name="name"
             placeholder="请输入您的用户名"
             required
-            value={this.state.username}
+            value={this.state.name}
             onChange={this.handleChange} />
         </div>
         

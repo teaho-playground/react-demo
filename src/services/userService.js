@@ -16,13 +16,13 @@ class UserService {
   login (userData) {
     return xhr({
       method: 'post',
-      url: '/login',
+      url: '/user/login',
       body: userData
     })
   }
 
   logout () {
-    return xhr({ url: '/logout' })
+    return xhr({ url: '/user/logout' })
   }
 
 }

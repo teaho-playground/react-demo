@@ -5,12 +5,12 @@ const xhr = ({ url, body = null, method = 'get' }) => {
 
   $.ajax({
     type: method,
-    url: rootPath + url,
-    data: body
+    url: url,
+    data: body,
     // xhrFields: { // 跨域允许带上 cookie
-    //   withCredentials: [域名]
+    //   withCredentials: 'localhost:22220'
     // },
-    // crossDomain: true
+    crossDomain: true
   })
   .done(defer.resolve)
   .fail(errHandler)

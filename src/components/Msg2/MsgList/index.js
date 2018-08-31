@@ -74,7 +74,7 @@ export default class MsgList extends Component {
               
               <OptBtnGroup
                 msgId={msg.id}
-                isAuthor={userData && userData.username === msg.author}
+                isAuthor={userData && userData.name === msg.author}
                 delMsg={delMsg}>
                 <Link
                   className="btn btn-info"
