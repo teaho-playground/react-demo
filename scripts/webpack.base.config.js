@@ -1,22 +1,18 @@
 
-const path = require('path')
+// const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const PATHS = require('./config/PATHS')
 
-const src = path.join(__dirname, '../src');
 const env = process.env.NODE_ENV;
-
-function resolve(relatedPath) {
-  return path.join(__dirname, relatedPath)
-}
 
 const webpackConfigBase = {
   entry: {
-    client: resolve('../src/app.js'),
+    client: PATHS.SRC.join('app.js'),
   },
   output: {
-    path: resolve('../dist'),
+    path: PATHS.DIST,
     filename: '[name].[hash:4].js',
     chunkFilename: 'chunks/[name].[hash:4].js',
   },
@@ -41,17 +37,17 @@ const webpackConfigBase = {
 	    // ================================
 	    // 自定义路径别名
 	    // ================================
-	    ASSET: path.join(src, 'assets'),
-	    COMPONENT: path.join(src, 'components'),
-	    ACTION: path.join(src, 'redux/actions'),
-	    REDUCER: path.join(src, 'redux/reducers'),
-	    STORE: path.join(src, 'redux/store'),
-	    ROUTE: path.join(src, 'routes'),
-	    SERVICE: path.join(src, 'services'),
-	    UTIL: path.join(src, 'utils'),
-	    HOC: path.join(src, 'utils/HoC'),
-	    MIXIN: path.join(src, 'utils/mixins'),
-	    VIEW: path.join(src, 'views')
+	    ASSET: PATHS.SRC.join('assets'),
+	    COMPONENT: PATHS.SRC.join('components'),
+	    ACTION: PATHS.SRC.join('redux/actions'),
+	    REDUCER: PATHS.SRC.join('redux/reducers'),
+	    STORE: PATHS.SRC.join('redux/store'),
+	    ROUTE: PATHS.SRC.join('routes'),
+	    SERVICE: PATHS.SRC.join('services'),
+	    UTIL: PATHS.SRC.join('utils'),
+	    HOC: PATHS.SRC.join('utils/HoC'),
+	    MIXIN: PATHS.SRC.join('utils/mixins'),
+	    VIEW: PATHS.SRC.join('views')
     },
   },
   resolveLoader: {
@@ -83,8 +79,8 @@ const webpackConfigBase = {
               loader: 'less', options: {
                 sourceMap: true, 
                 paths: [
-                  path.resolve(__dirname, "../node_modules"),
-                  path.resolve(__dirname, "../src")
+	                PATHS.ROOT.join("node_modules"),
+	                PATHS.SRC
                 ]
               }
             }
@@ -118,7 +114,7 @@ const webpackConfigBase = {
       minChunks: function (module, count) {
         return module.resource &&
           /\.js$/.test(module.resource) &&
-          module.resource.indexOf(resolve('../node_modules')) === 0
+          module.resource.indexOf(PATHS.ROOT.join('node_modules')) === 0
       }
     }),
     new webpack.optimize.CommonsChunkPlugin({
